@@ -26,7 +26,8 @@ apt-get autoremove >/dev/null
 
 # Update container OS
 msg "Updating container OS..."
-apt-get update >/dev/null
+apt-get update --allow-releaseinfo-change >/dev/null
+# apt-get update >/dev/null -- InRelease' changed its 'Suite' value from 'stable' to 'oldstable'
 apt-get -qqy upgrade &>/dev/null
 
 # Install prerequisites
